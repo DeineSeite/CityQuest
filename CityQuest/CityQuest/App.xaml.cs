@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using CityQuest.Services;
+using CityQuest.ViewModels;
+using FreshMvvm;
 using Xamarin.Forms;
 
 namespace CityQuest.Forms
@@ -11,9 +13,16 @@ namespace CityQuest.Forms
     {
         public App()
         {
+      
             InitializeComponent();
+            InitializeFreshMvvm();
+            var page= FreshMvvm.FreshPageModelResolver.ResolvePageModel<TestPageViewModel>();
+            MainPage = new FreshNavigationContainer(page);
+        }
 
-            MainPage = new CityQuest.Forms.MainPage();
+        void InitializeFreshMvvm()
+        {
+            FreshPageModelResolver.PageModelMapper = new CityQuestPageModelMapper();
         }
 
         protected override void OnStart()
