@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CityQuest.Navigation;
 using CityQuest.Services;
 using CityQuest.ViewModels;
 using FreshMvvm;
@@ -11,20 +12,28 @@ namespace CityQuest.Forms
 {
     public partial class App : Application
     {
+        public  ThemedMasterDetailNavigationContainer MasterDetailNavigation { get; set; }
         public App()
         {
-      
             InitializeComponent();
             InitializeFreshMvvm();
-            var page= FreshMvvm.FreshPageModelResolver.ResolvePageModel<TestPageViewModel>();
-            MainPage = new FreshNavigationContainer(page);
+            PrepairMasterDetailNav();
+            MainPage = MasterDetailNavigation;
         }
-
+        #region Private methods
         void InitializeFreshMvvm()
         {
             FreshPageModelResolver.PageModelMapper = new CityQuestPageModelMapper();
         }
 
+        void PrepairMasterDetailNav()
+        {
+            MasterDetailNavigation= new ThemedMasterDetailNavigationContainer();;
+            MasterDetailNavigation.Init("Menu","Menu.png");
+            MasterDetailNavigation.AddPageWithIcon<FirstPageViewModel>("Contacts", "Menu.png");
+            MasterDetailNavigation.AddPageWithIcon<FirstPageViewModel>("Pages", "icon.png");
+        }
+#endregion
         protected override void OnStart()
         {
             // Handle when your app starts
