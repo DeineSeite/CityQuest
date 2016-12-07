@@ -4,6 +4,10 @@ using System.Linq;
 using CityQuest.Forms;
 using Foundation;
 using UIKit;
+using UXDivers.Gorilla;
+using UXDivers.Gorilla.iOS;
+using CityQuest.ViewModels;
+using CityQuest.Views;
 
 namespace CityQuest.iOS
 {
@@ -24,7 +28,17 @@ namespace CityQuest.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+#if !GORILLA
+         LoadApplication(new App());  
+#else
+            LoadApplication(UXDivers.Gorilla.iOS.Player.CreateApplication(
+                new UXDivers.Gorilla.Config("Good Gorilla")
+                    .RegisterAssemblyFromType<BasePage>()
+                    .RegisterAssemblyFromType<BaseViewModel>()
+                    .RegisterAssemblyFromType<UXDivers.Artina.Shared.CircleImage>()
 
+                ));
+#endif
             return base.FinishedLaunching(app, options);
         }
     }

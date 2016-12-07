@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using CityQuest.Forms;
+using CityQuest.ViewModels;
+using CityQuest.Views;
 
 namespace CityQuest.Droid
 {
@@ -19,9 +21,20 @@ namespace CityQuest.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
+         
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+#if !GORILLA
             LoadApplication(new App());
+
+#else
+              LoadApplication(UXDivers.Gorilla.Droid.Player.CreateApplication(ApplicationContext,
+              new UXDivers.Gorilla.Config("Good Gorilla")
+              .RegisterAssemblyFromType<BasePage>()
+              .RegisterAssemblyFromType<BaseViewModel>()
+              .RegisterAssemblyFromType<UXDivers.Artina.Shared.CircleImage>()
+              ));
+#endif
         }
     }
 }

@@ -1,6 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shared="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
              x:Class="CityQuest.Views.MenuPage">
-    
+   <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+       <AbsoluteLayout HorizontalOptions="Fill">
+            <Image Source="background_profile.jpg"  VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1"
+                   AbsoluteLayout.LayoutFlags="WidthProportional,HeightProportional,XProportional,YProportional"
+				   Aspect="AspectFill"
+                   ></Image>
+       </AbsoluteLayout>
+        <shared:CircleImage Source="background_profile.jpg" ></shared:CircleImage>
+   </StackLayout>
 	</ContentPage>
