@@ -30,8 +30,9 @@ namespace CityQuest.Forms
         {
             MasterDetailNavigation= new ThemedMasterDetailNavigationContainer();;
             MasterDetailNavigation.Init("Menu","Menu.png");
-            MasterDetailNavigation.AddPageWithIcon<FirstPageViewModel>("Contacts", "Menu.png");
-            MasterDetailNavigation.AddPageWithIcon<FirstPageViewModel>("Pages", "icon.png");
+            MasterDetailNavigation.AddPageWithIcon<StartPageViewModel>("Home", "home.png");
+            MasterDetailNavigation.AddPageWithIcon<NewsPageViewModel>("News", "news.png");
+            MasterDetailNavigation.AddPageWithIcon<QuestsListPageViewModel>("Quests", "quests.png");
         }
 #endregion
         protected override void OnStart()

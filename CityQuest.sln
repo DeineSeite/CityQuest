@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityQuest.Droid", "CityQues
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityQuest.iOS", "CityQuest\CityQuest.iOS\CityQuest.iOS.csproj", "{099E9218-CD48-4A69-B68F-2AC7D4EABB94}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{469BC988-6831-460E-964E-3810894444E7}"
+	ProjectSection(SolutionItems) = preProject
+		Update-PackageName.ps1 = Update-PackageName.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -215,14 +220,15 @@ Global
 		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Debug|iPhone.Build.0 = Debug|iPhone
 		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
 		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Debug|x64.ActiveCfg = Debug|iPhone
 		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Debug|x86.ActiveCfg = Debug|iPhone
 		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Gorilla|Any CPU.ActiveCfg = Gorilla|iPhone
 		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Gorilla|ARM.ActiveCfg = Gorilla|iPhone
 		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Gorilla|iPhone.ActiveCfg = Gorilla|iPhone
-		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Gorilla|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Gorilla|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Gorilla|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
+		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Gorilla|iPhoneSimulator.ActiveCfg = Gorilla|iPhoneSimulator
+		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Gorilla|iPhoneSimulator.Build.0 = Gorilla|iPhoneSimulator
+		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Gorilla|iPhoneSimulator.Deploy.0 = Gorilla|iPhoneSimulator
 		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Gorilla|x64.ActiveCfg = Gorilla|iPhone
 		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Gorilla|x86.ActiveCfg = Gorilla|iPhone
 		{099E9218-CD48-4A69-B68F-2AC7D4EABB94}.Release|Any CPU.ActiveCfg = Release|iPhone

@@ -1,0 +1,12 @@
+﻿{
+  "knownAssemblies": [
+    { "name": "CityQuest" },
+    { "name": "FreshMvvm" },
+    {
+      "name": "UXDivers.Artina.Shared",
+      "types": null
+    },
+    { "name": "CityQuest.Views" },
+    { "name": "CityQuest.UserControls" }
+  ]
+}

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CityQuest.Pages;
+using CityQuest.UserControls;
+using CityQuest.ViewModels;
 using FreshMvvm;
 using Xamarin.Forms;
 
@@ -25,19 +28,19 @@ namespace CityQuest.Navigation
         protected override void CreateMenuPage(string menuPageTitle, string menuIcon = null)
         {
             var listview = new ListView();
-            var _menuPage = new ContentPage();
+            var _menuPage =(MenuPage)FreshPageModelResolver.ResolvePageModel<MenuPageViewModel>();
             _menuPage.Title = menuPageTitle;
-            _menuPage.BackgroundColor = Color.FromHex("#c8c8c8");
 
             listview.ItemsSource = pageIcons;
+         
+            var cell = new DataTemplate(typeof(MenuItemTemplate));
 
-            var cell = new DataTemplate(typeof(ImageCell));
-            cell.SetValue(TextCell.TextColorProperty, Color.Black);
-            cell.SetBinding(ImageCell.TextProperty, "Title");
-            cell.SetBinding(ImageCell.ImageSourceProperty, "IconSource");
-
-
+           
             listview.ItemTemplate = cell;
+            if (Device.OS == TargetPlatform.iOS)
+            {
+                listview.SeparatorVisibility = SeparatorVisibility.None;
+            }
             listview.ItemSelected += (sender, args) =>
             {
                 if (Pages.ContainsKey(((Models.MenuItem)args.SelectedItem).Title))
@@ -47,10 +50,9 @@ namespace CityQuest.Navigation
                 IsPresented = false;
             };
 
-            _menuPage.Content = listview;
-
+            _menuPage.MenuContentView= listview;
+            NavigationPage.SetHasNavigationBar(_menuPage, false);
             var navPage = new NavigationPage(_menuPage) { Title = "Menu" };
-
             if (!string.IsNullOrEmpty(menuIcon))
                 navPage.Icon = menuIcon;
 
