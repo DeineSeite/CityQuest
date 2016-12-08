@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shared="clr-namespace:UXDivers.Artina.Shared;assembly=UXDivers.Artina.Shared"
+             xmlns:pages="clr-namespace:CityQuest.Pages;assembly=CityQuest"
+             WidthRequest="300"
+             HeightRequest="300"
+             x:Class="CityQuest.Pages.MenuPage">
+   
+   <Grid  BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+       <Grid.RowDefinitions>
+           <RowDefinition Height="1*"></RowDefinition>
+           <RowDefinition Height="3*"></RowDefinition>
+       </Grid.RowDefinitions>
+            <Image Source="background_profile.jpg"  VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"
+				   Aspect="AspectFill"
+                   ></Image>
+        <StackLayout x:Name="ProfileLayout" Orientation="Horizontal" Grid.Row="0"  VerticalOptions="Center" >
+            <shared:CircleImage  Source="empty_profile.png" 
+                            BorderColor="White"
+                                Aspect="AspectFill"
+                                HorizontalOptions="Start"
+                                VerticalOptions="EndAndExpand"
+                            BorderThickness="2">
+                
+                <shared:CircleImage.WidthRequest>
+                    <OnIdiom x:TypeArguments="x:Double" Phone="120" Tablet="200" />
+                </shared:CircleImage.WidthRequest>
+                <shared:CircleImage.Margin>
+                    <OnIdiom x:TypeArguments="Thickness" Phone="-15,0,0,0" Tablet="-25,0,0,0" />
+                </shared:CircleImage.Margin>
+            </shared:CircleImage>
+            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                <StackLayout.Margin>
+                    <OnIdiom x:TypeArguments="Thickness" Phone="-20,0,0,5" Tablet="-40,0,0,5" />
+                </StackLayout.Margin>
+                <Label Text="Vladyslav Kostiushko" Margin="0,5,5,0" TextColor="White" FontSize="Medium"></Label>
+                <Label Text="vladik1996@live.ru" Margin="0,-5,0,5"  TextColor="White" FontSize="Small"></Label>
+
+            </StackLayout>
+        </StackLayout>
+
+        <ContentView x:Name="MenuView" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></ContentView>
+    </Grid>
+	</pages:BasePage>
