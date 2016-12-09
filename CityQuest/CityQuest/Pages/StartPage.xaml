@@ -4,5 +4,8 @@
              xmlns:pages="clr-namespace:CityQuest.Pages;assembly=CityQuest"
              x:Class="CityQuest.Pages.StartPage"
                 Title="City Quest">
-	<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+	<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <WebView x:Name="QuestWebView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+</WebView>
+    </StackLayout>
 </pages:BasePage>

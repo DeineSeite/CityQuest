@@ -7,8 +7,10 @@ using CityQuest.Services;
 using CityQuest.ViewModels;
 using FreshMvvm;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
-namespace CityQuest.Forms
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+namespace CityQuest
 {
     public partial class App : Application
     {

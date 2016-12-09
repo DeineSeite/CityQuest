@@ -6,7 +6,6 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using CityQuest.Forms;
 using CityQuest.Pages;
 using CityQuest.ViewModels;
 
